@@ -19,7 +19,7 @@ public class FoodRoundManager : MonoBehaviour
     public void StartFoodRound()
     {
         roundMenu.GetComponent<Canvas>().enabled = true;
-        Instantiate(foodPrefab, new Vector3(5, 20, 0), Quaternion.identity);
+        Instantiate(foodPrefab, new Vector3(0, 20, 5), Quaternion.identity);
         StartCoroutine(EggSpawn());
         StartCoroutine(RoundTimer());
     }

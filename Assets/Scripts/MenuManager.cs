@@ -16,6 +16,8 @@ public class MenuManager : MonoBehaviour
     public void ActiveCanvas()
     {
         Player player = GameManager.instance.player.GetComponent<Player>();
+        GameManager.instance.statsMenu.enabled = true;
+        Time.timeScale = 0;
         if (player.HP + healedHP > maxHP)
         {
             player.HP = maxHP;
@@ -31,20 +33,7 @@ public class MenuManager : MonoBehaviour
     public void NextBattle()
     {
         Round++;
-        if (Round%5 != 0)
-        {
-            GameManager.instance.StartRound();
-            hpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
-            UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            foodRoundManager.StartFoodRound();
-            //busca statscanvas
-            GameObject.Find("StatsCanvas").SetActive(false);
-            sliderCanvas.GetComponent<Canvas>().enabled = false;
-        }
+        GameManager.instance.StartRound();
         GameManager.instance.player.gameObject.transform.position = new Vector3(0, 2, 0);
         GameManager.instance.player.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 

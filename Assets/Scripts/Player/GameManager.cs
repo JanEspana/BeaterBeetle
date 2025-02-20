@@ -21,18 +21,30 @@ public class GameManager : MonoBehaviour
     }
     public void StartRound()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         statsMenu.GetComponent<Canvas>().enabled = false;
-        enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
-        enemy.GetComponent<Character>().slider = enemyHPBar;
-        enemyHPBar.GetComponent<Slider>().value = enemyHPBar.GetComponent<Slider>().maxValue;
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        if (menuManager.Round % 5 != 0)
+        {
+            menuManager.hpBar.value = instance.player.GetComponent<Player>().HP / menuManager.maxHP;
+            menuManager.UIhpBar.value = instance.player.GetComponent<Player>().HP / menuManager.maxHP;
+            enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
+            enemy.GetComponent<Character>().slider = enemyHPBar;
+            enemyHPBar.GetComponent<Slider>().value = enemyHPBar.GetComponent<Slider>().maxValue;
+        }
+        else
+        {
+            menuManager.foodRoundManager.StartFoodRound();
+            //busca statscanvas
+            GameObject.Find("StatsCanvas").GetComponent<Canvas>().enabled = false;
+            menuManager.sliderCanvas.GetComponent<Canvas>().enabled = false;
+        }
     }
     private void Update()
     {
-        if (enemy == null)
+        if (statsMenu.enabled)
         {
             Cursor.lockState = CursorLockMode.None;
-            statsMenu.enabled = true;
         }
     }
 }
