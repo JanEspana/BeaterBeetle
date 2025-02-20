@@ -29,7 +29,7 @@ public class FoodRoundManager : MonoBehaviour
         {
             yield return new WaitForSeconds(timeBetweenEggs);
             //instatiate egg in random position
-            Vector3 randomPos = new Vector3(Random.Range(-20, 20), 2, Random.Range(-20, 20));
+            Vector3 randomPos = new Vector3(Random.Range(-20, 20), 1, Random.Range(-20, 20));
             Instantiate(eggPrefab, randomPos, Quaternion.identity);
         }
         Debug.Log("Food Round Over");
@@ -55,8 +55,17 @@ public class FoodRoundManager : MonoBehaviour
         {
             button.GetComponent<UpgradeMenu>().SelectRandomUpgrade();
         }
-        Destroy(GameObject.FindGameObjectWithTag("Food"));
-        upgradeMenu.GetComponent<Canvas>().enabled = true;
+        if (GameObject.FindGameObjectWithTag("Food") != null)
+        {
+            GameManager.instance.player.GetComponent<Player>().calories += GameObject.FindGameObjectWithTag("Food").GetComponent<FoodScript>().HP*2;
+            upgradeMenu.GetComponent<Canvas>().enabled = true;
+            Destroy(GameObject.FindGameObjectWithTag("Food"));
+        }
+        else
+        {
+            //muestra el menu de stats
+            GameManager.instance.statsMenu.enabled = true;
+        }
         roundMenu.GetComponent<Canvas>().enabled = false;
 
     }

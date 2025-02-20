@@ -12,6 +12,7 @@ TagManager:
   - Slider
   - StatsCanvas
   - GameManager
+  - UpgradeCanvas
   layers:
   - Default
   - TransparentFX

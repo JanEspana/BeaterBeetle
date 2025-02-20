@@ -11,10 +11,6 @@ public class Player : Character
     public bool isBlocking;
     public override void CheckIfAlive(bool hasKnockback)
     {
-        if (hasKnockback)
-        {
-            Debug.Log("Implement knockback");
-        }
         if (HP <= 0)
         {
             HP = 0;

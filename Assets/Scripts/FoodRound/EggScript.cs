@@ -5,6 +5,7 @@ using UnityEngine;
 public class EggScript : Character
 {
     public GameObject ant;
+    public int AntSpawnAmount;
 
     public override void CheckIfAlive(bool hasKnockback)
     {
@@ -27,9 +28,12 @@ public class EggScript : Character
     private IEnumerator StartEgg()
     {
         yield return new WaitForSeconds(3);
-        Instantiate(ant, transform.position, Quaternion.identity);
-        Instantiate(ant, transform.position, Quaternion.identity);
-        Instantiate(ant, transform.position, Quaternion.identity);
+        //haz un bucle 
+        for (int i = 0; i < AntSpawnAmount; i++)
+        {
+            //instancia ant en la posicion del huevo
+            Instantiate(ant, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

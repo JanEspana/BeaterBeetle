@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenEggs: 3
-  totalTimer: 30
+  totalTimer: 3
   timer: 0
   eggPrefab: {fileID: 5370022411559876699, guid: d7afcc695c2f6354a81847c1d3fd232d, type: 3}
   foodPrefab: {fileID: 8381959130147275330, guid: b145b31c4370d8a4f888c299a13e6d64, type: 3}
@@ -3333,6 +3333,7 @@ MonoBehaviour:
   player: {fileID: 0}
   statsMenu: {fileID: 1528741083}
   hpBars: {fileID: 1225311446}
+  upgradeCanvas: {fileID: 0}
 --- !u!4 &944985218
 Transform:
   m_ObjectHideFlags: 0
@@ -4313,7 +4314,7 @@ GameObject:
   - component: {fileID: 1178718717}
   m_Layer: 5
   m_Name: UpgradeCanvas
-  m_TagString: Untagged
+  m_TagString: UpgradeCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5835,6 +5836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 0}
+  menuManager: {fileID: 0}
+  leftoverUpgradeSO: {fileID: 11400000, guid: 0f63b392e1e38b746aec4ec866962efb, type: 2}
 --- !u!1 &1689109961
 GameObject:
   m_ObjectHideFlags: 0
@@ -6132,6 +6135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 0}
+  menuManager: {fileID: 0}
+  leftoverUpgradeSO: {fileID: 11400000, guid: 0f63b392e1e38b746aec4ec866962efb, type: 2}
 --- !u!1 &1723696105
 GameObject:
   m_ObjectHideFlags: 0
@@ -6413,6 +6418,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 0}
+  menuManager: {fileID: 0}
+  leftoverUpgradeSO: {fileID: 11400000, guid: 0f63b392e1e38b746aec4ec866962efb, type: 2}
 --- !u!1 &1836780477
 GameObject:
   m_ObjectHideFlags: 0

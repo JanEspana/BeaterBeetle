@@ -8,7 +8,8 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     public float speed;
     public bool isGrounded;
-    public float dashCooldown = 3;
+    public float dashCooldown;
+    public float dashRecharge = 2;
     public float jumpForce;
     private bool canMove = true;
 
@@ -52,7 +53,7 @@ public class Movement : MonoBehaviour
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
                 speed *= 5;
-                dashCooldown = 3;
+                dashCooldown = dashRecharge;
                 StartCoroutine(DeactivateDash());
             }
         }

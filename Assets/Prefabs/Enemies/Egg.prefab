@@ -124,3 +124,4 @@ MonoBehaviour:
   hasKnockback: 0
   slider: {fileID: 0}
   ant: {fileID: 8976464780881272720, guid: dfaba0cbc26aafc46bb3e2e80f444044, type: 3}
+  AntSpawnAmount: 5

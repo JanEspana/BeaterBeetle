@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7e59830216a9c4e89ef345f153f0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 50
   hasKnockback: 0
   slider: {fileID: 0}
   healthBarSlider: {fileID: 0}
