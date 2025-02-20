@@ -3328,11 +3328,13 @@ MonoBehaviour:
   playerHPBar: {fileID: 364942991}
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
-  - {fileID: 919132149155446097, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
+  - {fileID: 3259728546879240063, guid: dfe7c2bc2f0c84e4ba2c4a8ff930959f, type: 3}
   enemy: {fileID: 0}
   player: {fileID: 0}
   statsMenu: {fileID: 1528741083}
   hpBars: {fileID: 1225311446}
+  upgradeCanvas: {fileID: 1178718715}
+  roundText: {fileID: 0}
 --- !u!4 &944985218
 Transform:
   m_ObjectHideFlags: 0
@@ -4122,6 +4124,7 @@ MonoBehaviour:
   speed: 10
   isGrounded: 0
   dashCooldown: 0
+  dashRecharge: 2
   jumpForce: 7.5
 --- !u!65 &1178522510
 BoxCollider:
@@ -4365,7 +4368,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178718712}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -5835,6 +5838,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 0}
+  menuManager: {fileID: 0}
+  leftoverUpgradeSO: {fileID: 0}
 --- !u!1 &1689109961
 GameObject:
   m_ObjectHideFlags: 0
@@ -6132,6 +6137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 0}
+  menuManager: {fileID: 0}
+  leftoverUpgradeSO: {fileID: 0}
 --- !u!1 &1723696105
 GameObject:
   m_ObjectHideFlags: 0
@@ -6413,6 +6420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 0}
+  menuManager: {fileID: 0}
+  leftoverUpgradeSO: {fileID: 0}
 --- !u!1 &1836780477
 GameObject:
   m_ObjectHideFlags: 0

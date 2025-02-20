@@ -29,8 +29,12 @@ public class Punch : AttackGeneric
             }
             else
             {
-                other.gameObject.GetComponent<Character>().TakeDamage(dmg);
+                if (rivalTag == "Player" || rivalTag == "Enemy")
+                {
+                    other.gameObject.GetComponent<Character>().TakeDamage(dmg);
+                }
             }
+            Debug.Log("Punch");
         }
     }
 }

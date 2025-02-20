@@ -7,15 +7,19 @@ public abstract class Character : MonoBehaviour
 {
     public float HP;
     public bool hasKnockback;
+    public bool isInvincible = false;
     public GameObject slider;
     public void TakeDamage(float dmg)
     {
-        HP -= dmg;
-        if ((gameObject.GetComponent<EnemyController>() != null && !gameObject.GetComponent<EnemyController>().isAnt) || gameObject.GetComponent<Player>() != null)
+        if (!isInvincible)
         {
-            slider.GetComponent<Slider>().value = HP / 10;
+            HP -= dmg;
+            if ((gameObject.GetComponent<EnemyController>() != null && !gameObject.GetComponent<EnemyController>().isAnt) || gameObject.GetComponent<Player>() != null)
+            {
+                slider.GetComponent<Slider>().value = HP / 10;
+            }
+            CheckIfAlive(hasKnockback);
         }
-        CheckIfAlive(hasKnockback);
     }
     public abstract void CheckIfAlive(bool hasKnockback);
 

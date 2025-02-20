@@ -36,8 +36,8 @@ ModelImporter:
       name: Anim_Attack
       takeName: Armature|ArmatureAction
       internalID: 4781951162920444690
-      firstFrame: 0
-      lastFrame: 35
+      firstFrame: 5
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

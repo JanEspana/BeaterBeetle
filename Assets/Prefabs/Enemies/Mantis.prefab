@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   hasKnockback: 0
+  isInvincible: 0
   slider: {fileID: 0}
   currentState: {fileID: 11400000, guid: 4f468f96d55804a4bb47b339eea98885, type: 2}
   chase: {fileID: 730772339023052022}
@@ -450,7 +451,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7282184637312771418}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -548,7 +549,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!1 &8120752669743016125
 GameObject:
@@ -601,7 +602,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8120752669743016125}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -699,7 +700,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!1001 &9150676025115198380
 PrefabInstance:

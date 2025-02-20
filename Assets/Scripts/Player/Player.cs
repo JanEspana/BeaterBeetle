@@ -16,7 +16,13 @@ public class Player : Character
             HP = 0;
             Die();
         }
+        else
+        {
+            isInvincible = true;
+            StartCoroutine(InvincibilityFrames());
+        }
     }
+
     public override void Die()
     {
         gameObject.GetComponent<Collider>().enabled = false;
@@ -41,5 +47,10 @@ public class Player : Character
             isBlocking = false;
             gameObject.GetComponent<Movement>().speed = 10;
         }
+    }
+    IEnumerator InvincibilityFrames()
+    {
+        yield return new WaitForSeconds(0.5f);
+        isInvincible = false;
     }
 }

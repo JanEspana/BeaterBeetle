@@ -10,20 +10,21 @@ public class AttackBehaviourSlash : AttackBehaviourGeneric
     {
         if (attackCooldown <= 0)
         {
-
-
             if (actualCut && player.HP > 0)
             {
                 Slash(lowCut, lowCut.GetComponent<BoxCollider>());
+                Debug.Log("LowCut");
             }
             else if (!actualCut && player.HP > 0)
             {
                 Slash(crossCut, crossCut.GetComponent<BoxCollider>());
+                Debug.Log("CrossCut");
             }
             else if (player.HP <= 0)
             {
                 gameObject.GetComponent<EnemyController>().GoToState<IdleSO>();
             }
+            attackCooldown = 3;
         }
         else
         {
@@ -34,29 +35,19 @@ public class AttackBehaviourSlash : AttackBehaviourGeneric
     {
         if (!isAttacking)
         {
-            cut.GetComponent<Punch>().originalPosition = cut.transform.position;
+            
             isAttacking = true;
             collider.enabled = true;
-            cut.GetComponent<Rigidbody>().velocity = cut.transform.forward * 5;
+            cut.transform.position += cut.transform.forward * 0.75f;
             StartCoroutine(ResetCut(cut, collider));
         }
     }
     IEnumerator ResetCut(GameObject cut, BoxCollider collider)
     {
         yield return new WaitForSeconds(0.5f);
-        cut.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        cut.transform.position = cut.GetComponent<Punch>().originalPosition;
         collider.enabled = false;
+        cut.transform.position -= cut.transform.forward * 0.75f;
         isAttacking = false;
         actualCut = Random.Range(0, 2) == 0;
-        attackCooldown = 3;
-        if (actualCut)
-        {
-            warningSphere.GetComponent<Renderer>().material.color = Color.red;
-        }
-        else
-        {
-            warningSphere.GetComponent<Renderer>().material.color = Color.blue;
-        }
     }
 }
