@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> enemyPrefabs;
     public GameObject enemy, player;
     public Canvas statsMenu, hpBars, upgradeCanvas;
+    public TextMeshProUGUI roundText;
     void Awake()
     {
         menuManager = GameObject.Find("GameManager").GetComponent<MenuManager>();
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartRound()
     {
+        roundText.text = "Round " + menuManager.Round;
         statsMenu.GetComponent<Canvas>().enabled = false;
         upgradeCanvas.GetComponent<Canvas>().enabled = false;
         //elimina todo con tag enemy
