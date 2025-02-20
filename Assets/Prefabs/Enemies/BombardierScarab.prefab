@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 6742735767649413165}
   - component: {fileID: 5848438232770228368}
   - component: {fileID: 7928192342488730363}
+  - component: {fileID: 4740647458943959991}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -4965,6 +4966,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.155937, y: 9.441282, z: 7.192905}
   m_Center: {x: 0.17483974, y: -0.038411498, z: 4.6270247}
+--- !u!114 &4740647458943959991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166322227362132625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23f64da734a6124a970b45326d9db9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 3
+  rivalTag: Player
+  isRecharged: 1
 --- !u!1 &3259728546879240063
 GameObject:
   m_ObjectHideFlags: 0
