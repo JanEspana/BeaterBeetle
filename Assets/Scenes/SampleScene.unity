@@ -811,7 +811,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 250592727}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 944985219}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: UpgradeArmor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &250592727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,7 +1509,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 944985219}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: UpgradeHP
         m_Mode: 1
@@ -2814,7 +2826,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 807231598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 944985219}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: UpgradeSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &807231598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3368,8 +3392,11 @@ MonoBehaviour:
   maxHP: 10
   healedHP: 3
   Round: 1
+  price: 100
+  statsGainedFromBuying: 1
   foodRoundManager: {fileID: 269441684}
   sliderCanvas: {fileID: 1225311443}
+  player: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4281,6 +4308,7 @@ MonoBehaviour:
   calories: 0
   gainedCalories: 100
   isBlocking: 0
+  armor: 0
 --- !u!135 &1178522517
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5000,7 +5028,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1318668414}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 944985219}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: UpgradeCD
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1318668414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5196,7 +5236,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1405095186}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 944985219}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: UpgradeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1405095186
 MonoBehaviour:
   m_ObjectHideFlags: 0

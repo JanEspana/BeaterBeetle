@@ -13,6 +13,17 @@ public abstract class Character : MonoBehaviour
     {
         if (!isInvincible)
         {
+            if (gameObject.GetComponent<Player>() != null)
+            {
+                if (dmg - gameObject.GetComponent<Player>().armor*0.2 < 1)
+                {
+                    dmg = 1;
+                }
+                else
+                {
+                    dmg -= gameObject.GetComponent<Player>().armor;
+                }
+            }
             HP -= dmg;
             if ((gameObject.GetComponent<EnemyController>() != null && !gameObject.GetComponent<EnemyController>().isAnt) || gameObject.GetComponent<Player>() != null)
             {

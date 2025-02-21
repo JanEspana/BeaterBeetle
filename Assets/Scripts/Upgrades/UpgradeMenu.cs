@@ -15,7 +15,6 @@ public class UpgradeMenu : MonoBehaviour
         if (UpgradeManager.instance.upgrades.Count != 0)
         {
             upgrade = UpgradeManager.instance.upgrades[Random.Range(0, UpgradeManager.instance.upgrades.Count)];
-            //elimina o upgrade selecionado da lista
             UpgradeManager.instance.upgrades.Remove(upgrade);
             gameObject.GetComponent<Image>().sprite = upgrade.icon;
             gameObject.GetComponentInChildren<TextMeshProUGUI>().text = upgrade.upgradeName;
@@ -26,7 +25,6 @@ public class UpgradeMenu : MonoBehaviour
             upgrade = leftoverUpgradeSO;
             gameObject.GetComponent<Image>().sprite = upgrade.icon;
             gameObject.GetComponentInChildren<TextMeshProUGUI>().text = upgrade.upgradeName;
-            //abre statscanvas
         }
 
     }

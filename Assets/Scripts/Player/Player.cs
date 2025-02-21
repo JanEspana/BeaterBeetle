@@ -9,6 +9,7 @@ public class Player : Character
     public float calories;
     public float gainedCalories=100;
     public bool isBlocking;
+    public int armor = 0;
     public override void CheckIfAlive(bool hasKnockback)
     {
         if (HP <= 0)
@@ -39,7 +40,6 @@ public class Player : Character
         if (Input.GetMouseButtonDown(1))
         {
             isBlocking = true;
-            //busca movement de este objeto
             gameObject.GetComponent<Movement>().speed=0;
         }
         if (Input.GetMouseButtonUp(1))
