@@ -79,11 +79,22 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Food" || other.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "Food")
         {
             canMove = false;
             rb.velocity = Vector3.zero;
             Vector3 direction = (new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(other.transform.position.x, 0, other.transform.position.z)).normalized;
+            rb.AddForce(direction * 5, ForceMode.Impulse);
+            StartCoroutine(EnableMovement());
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Wall")
+        {
+            canMove = false;
+            rb.velocity = Vector3.zero;
+            Vector3 direction = - (new Vector3(transform.position.x, 0, transform.position.z) + new Vector3(other.transform.position.x, 0, other.transform.position.z)).normalized;
             rb.AddForce(direction * 5, ForceMode.Impulse);
             StartCoroutine(EnableMovement());
         }

@@ -13,6 +13,7 @@ TagManager:
   - StatsCanvas
   - GameManager
   - UpgradeCanvas
+  - Wall
   layers:
   - Default
   - TransparentFX
