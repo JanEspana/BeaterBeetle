@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     public float healedHP = 3;
     public int Round = 1;
     public float price = 100;
+    public float hpPrice = 50;
     public float statsGainedFromBuying = 1;
     public FoodRoundManager foodRoundManager;
     public GameObject sliderCanvas;
@@ -43,7 +44,7 @@ public class MenuManager : MonoBehaviour
     }
     public void UpgradeHP()
     {
-        if (player.HP != maxHP && player.calories >= price)
+        if (player.HP != maxHP && player.calories >= hpPrice)
         {
             if (player.HP + statsGainedFromBuying > maxHP)
             {
@@ -57,7 +58,7 @@ public class MenuManager : MonoBehaviour
                 UIhpBar.value = player.HP / maxHP;
                 hpBar.value = player.HP / maxHP;
             }
-            player.calories -= price;
+            player.calories -= hpPrice;
             calories.text = player.calories.ToString();
         }
     }
@@ -82,7 +83,7 @@ public class MenuManager : MonoBehaviour
     }
     public void UpgradeCD()
     {
-        if (player.calories >= price && player.GetComponent<AttackManager>().specialCooldown >= statsGainedFromBuying / 2.5f)
+        if (player.calories >= price && player.GetComponent<AttackManager>().specialCooldown - statsGainedFromBuying / 2.5f >= statsGainedFromBuying / 2.5f)
         {
             player.GetComponent<AttackManager>().specialCooldown -= statsGainedFromBuying/2.5f;
             player.calories -= price;

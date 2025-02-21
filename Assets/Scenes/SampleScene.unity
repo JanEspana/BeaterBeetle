@@ -3393,6 +3393,7 @@ MonoBehaviour:
   healedHP: 3
   Round: 1
   price: 100
+  hpPrice: 50
   statsGainedFromBuying: 1
   foodRoundManager: {fileID: 269441684}
   sliderCanvas: {fileID: 1225311443}
@@ -4456,6 +4457,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b3f49c3e4e40e4c4d9d04a8e8b11669b, type: 2}
   - {fileID: 11400000, guid: 2b9acaa97e2e5334fb215bd9f9c92734, type: 2}
   - {fileID: 11400000, guid: f3b2ef1180a0c21469e821202a119761, type: 2}
+  - {fileID: 11400000, guid: 6408b93833dfa3447be4d9727258376f, type: 2}
+  - {fileID: 11400000, guid: a1159692ff862e5488a9de7b31941b5c, type: 2}
   player: {fileID: 0}
   menuManager: {fileID: 0}
 --- !u!1 &1221839227
@@ -4651,7 +4654,7 @@ GameObject:
   - component: {fileID: 1253250354}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

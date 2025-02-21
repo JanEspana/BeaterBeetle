@@ -15,7 +15,7 @@ public class SugarRush : UpgradeSO
         {
             GameManager.instance.player.GetComponentInChildren<Player>().armor += overallBoost;
         }
-        if  (GameManager.instance.player.GetComponent<AttackManager>().specialCooldown >= overallBoost / 2.5f)
+        if  (GameManager.instance.player.GetComponent<AttackManager>().specialCooldown - overallBoost / 2.5f >= overallBoost / 2.5f)
         {
             GameManager.instance.player.GetComponent<AttackManager>().specialCooldown -= overallBoost / 2.5f;
 
