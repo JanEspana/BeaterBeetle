@@ -17,11 +17,10 @@ public class AttackBehaviourJump : AttackBehaviourGeneric
             {
                 targetPosition = player.transform;
                 transform.LookAt(targetPosition);
-                jumpForceX = Vector3.Distance(transform.position, targetPosition.position);
-                jumpForceY = 500;
+                jumpForceX = Vector3.Distance(transform.position, targetPosition.position) * 50;
+                jumpForceY = 350;
                 rb.AddForce(transform.up * jumpForceY);
-                Debug.Log(jumpForceX);
-                rb.AddForce(transform.forward * jumpForceX * 50);
+                rb.AddForce(transform.forward * jumpForceX);
                 attackCooldown = 3;
                 isGrounded = false;
             }
@@ -35,7 +34,7 @@ public class AttackBehaviourJump : AttackBehaviourGeneric
             if (attackCooldown <= 0 && player.HP > 0 && isGrounded)
             {
                 player.TakeDamage(1);
-                attackCooldown = 1.5f;
+                attackCooldown = 1.6f;
             }
             else if (player.HP > 0 && attackCooldown > 0)
             {
@@ -45,7 +44,7 @@ public class AttackBehaviourJump : AttackBehaviourGeneric
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (isGrounded && collision.gameObject.tag == "Player")
+        if (!isGrounded && collision.gameObject.tag == "Player")
         {
             player.TakeDamage(2);
         }
