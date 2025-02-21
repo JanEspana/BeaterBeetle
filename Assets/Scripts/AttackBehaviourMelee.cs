@@ -5,7 +5,8 @@ using UnityEngine;
 public class AttackBehaviourMelee : AttackBehaviourGeneric
 {
     public GameObject leftPunch, rightPunch;
-    bool actualPunch, isAttacking;
+    public bool actualPunch;
+    bool isAttacking;
     public override void Attack()
     {
         if (actualPunch && player.HP > 0)

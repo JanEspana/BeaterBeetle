@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 730772339023052022}
   - component: {fileID: 5395014725901845625}
   - component: {fileID: 6986266950288518349}
+  - component: {fileID: 4817855953626958184}
   m_Layer: 0
   m_Name: ScarabEnemy
   m_TagString: Enemy
@@ -253,6 +254,7 @@ MonoBehaviour:
   attackCooldown: 0.5
   leftPunch: {fileID: 5705530950396767097}
   rightPunch: {fileID: 3552336577709297571}
+  actualPunch: 0
 --- !u!195 &6986266950288518349
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -275,6 +277,21 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4817855953626958184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259728546879240063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e925cc3a1f2e3d9458addd184bf823b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 8379940728794579546}
+  currentState: {fileID: 0}
+  abm: {fileID: 5395014725901845625}
 --- !u!1 &3552336577709297571
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,10 +609,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0724fd09b4f16a34c990061c5867a589, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8379940728794579546}
   m_SourcePrefab: {fileID: 100100000, guid: 0724fd09b4f16a34c990061c5867a589, type: 3}
 --- !u!4 &3689613796422500388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0724fd09b4f16a34c990061c5867a589, type: 3}
   m_PrefabInstance: {fileID: 3800648095769405391}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4071241554395962014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0724fd09b4f16a34c990061c5867a589, type: 3}
+  m_PrefabInstance: {fileID: 3800648095769405391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8379940728794579546
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4071241554395962014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c6462d8bcaa0f745a6748a66ed124d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

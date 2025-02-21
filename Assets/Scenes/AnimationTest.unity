@@ -3328,7 +3328,7 @@ MonoBehaviour:
   playerHPBar: {fileID: 364942991}
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
-  - {fileID: 3259728546879240063, guid: bb0870a36a46625438f387f03b205b2a, type: 3}
+  - {fileID: 3259728546879240063, guid: ae9f7158d7dbcbd45b00d5e3612e372e, type: 3}
   enemy: {fileID: 0}
   player: {fileID: 0}
   statsMenu: {fileID: 1528741083}
@@ -3368,8 +3368,11 @@ MonoBehaviour:
   maxHP: 10
   healedHP: 3
   Round: 1
+  price: 100
+  statsGainedFromBuying: 1
   foodRoundManager: {fileID: 269441684}
   sliderCanvas: {fileID: 1225311443}
+  player: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4281,6 +4284,7 @@ MonoBehaviour:
   calories: 0
   gainedCalories: 100
   isBlocking: 0
+  armor: 0
 --- !u!135 &1178522517
 SphereCollider:
   m_ObjectHideFlags: 0
