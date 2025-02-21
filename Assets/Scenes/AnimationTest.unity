@@ -4275,6 +4275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   hasKnockback: 0
+  isInvincible: 0
   slider: {fileID: 364942991}
   cam: {fileID: 963194227}
   calories: 0
