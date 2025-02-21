@@ -3328,7 +3328,7 @@ MonoBehaviour:
   playerHPBar: {fileID: 364942991}
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
-  - {fileID: 3259728546879240063, guid: dfe7c2bc2f0c84e4ba2c4a8ff930959f, type: 3}
+  - {fileID: 3259728546879240063, guid: bb0870a36a46625438f387f03b205b2a, type: 3}
   enemy: {fileID: 0}
   player: {fileID: 0}
   statsMenu: {fileID: 1528741083}

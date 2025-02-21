@@ -15,7 +15,7 @@ public class SprayDamage : AttackGeneric
                 dmg = 4;
                 isAttacking = true;
                 Debug.Log("Spray hit " + dmg);
-
+                other.gameObject.GetComponent<Player>().TakeDamage(dmg);
             }
             else
             {

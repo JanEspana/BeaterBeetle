@@ -8,7 +8,7 @@ public class BombAnim : AnimGeneric
     public override void SpecificAnim()
     {
         currentState = GetComponent<EnemyController>().currentState;
-        if (currentState.GetType() == typeof(AttackSO) && abd.attackCooldown <= 0)
+        if (currentState.GetType() == typeof(AttackSO) && abd.attackCooldown <= 0.5f)
         {
             anim.SetTrigger("Attack");
         }

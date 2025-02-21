@@ -16,7 +16,6 @@ public class AttackSO : StatesSO
             Rigidbody rb = ec.gameObject.GetComponent<Rigidbody>();
             rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         }
-        //fix the position of the enemy
     }
 
     public override void OnStateExit(EnemyController ec)
