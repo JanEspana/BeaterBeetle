@@ -9,17 +9,25 @@ public class AttackBehaviourMelee : AttackBehaviourGeneric
     bool isAttacking;
     public override void Attack()
     {
-        if (actualPunch && player.HP > 0)
+        if (attackCooldown <= 0)
         {
-            BasicAttack(leftPunch, leftPunch.GetComponent<BoxCollider>());
-        }
-        else if (!actualPunch && player.HP > 0)
-        {
-            BasicAttack(rightPunch, rightPunch.GetComponent<BoxCollider>());
+            if (actualPunch && player.HP > 0)
+            {
+                BasicAttack(leftPunch, leftPunch.GetComponent<BoxCollider>());
+            }
+            else if (!actualPunch && player.HP > 0)
+            {
+                BasicAttack(rightPunch, rightPunch.GetComponent<BoxCollider>());
+            }
+            else
+            {
+                gameObject.GetComponent<EnemyController>().GoToState<IdleSO>();
+            }
+            attackCooldown = 1f;
         }
         else
         {
-            gameObject.GetComponent<EnemyController>().GoToState<IdleSO>();
+            attackCooldown -= Time.deltaTime;
         }
     }
     void BasicAttack(GameObject punch, BoxCollider collider)
@@ -34,7 +42,7 @@ public class AttackBehaviourMelee : AttackBehaviourGeneric
     }
     IEnumerator ResetPosition(GameObject punch, BoxCollider collider)
     {
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(0.5f);
         collider.enabled = false;
         punch.transform.position += punch.transform.right * 0.5f;
         isAttacking = false;

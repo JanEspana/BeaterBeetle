@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  attackCooldown: 0.5
+  attackCooldown: 1
   leftPunch: {fileID: 5705530950396767097}
   rightPunch: {fileID: 3552336577709297571}
   actualPunch: 0
