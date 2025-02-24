@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackBehaviourSting : AttackBehaviourGeneric
 {
     public Rigidbody rb;
-    bool isGrounded = false;
+    public bool isGrounded = false;
     Transform targetPosition;
     public override void Attack()
     {
