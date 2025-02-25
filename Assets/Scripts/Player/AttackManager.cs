@@ -46,7 +46,7 @@ public class AttackManager : MonoBehaviour
             }
             else
             {
-                specialCooldown -= Time.deltaTime;
+                StartCoroutine(ResetSpecial(horn));
             }
         }
     }
@@ -69,5 +69,10 @@ public class AttackManager : MonoBehaviour
         hit.transform.position = hit.transform.position + hit.transform.right * 0.5f;
         isAttacking = false;
         actualPunch = !actualPunch;
+    }
+    IEnumerator ResetSpecial(GameObject special)
+    {
+        yield return new WaitForSeconds(specialCooldown);
+        special.GetComponent<AttackGeneric>().isRecharged = true;
     }
 }
