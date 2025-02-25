@@ -4397,6 +4397,7 @@ MonoBehaviour:
   gainedCalories: 100
   isBlocking: 0
   armor: 0
+  DeathMenuManager: {fileID: 0}
 --- !u!135 &1178522517
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4845,7 +4846,8 @@ PrefabInstance:
       value: Arena-5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6163104042451885797, guid: 1912b28092e79764aaccb531aa76a9f7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1912b28092e79764aaccb531aa76a9f7, type: 3}
