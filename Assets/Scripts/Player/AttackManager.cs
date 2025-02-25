@@ -6,7 +6,7 @@ public class AttackManager : MonoBehaviour
 {
     public GameObject leftPunch, rightPunch, horn;
     BoxCollider leftPunchCollider, rightPunchCollider, hornCollider;
-    bool isAttacking = false;
+    public bool isAttacking = false, special = false;
     public float attackCooldown = 0.3f, specialCooldown = 3f;
     public bool actualPunch = true;
     private void Awake()
@@ -27,24 +27,33 @@ public class AttackManager : MonoBehaviour
         {
             if (actualPunch)
             {
-                AttackAnim(leftPunch, leftPunchCollider);
+                StartCoroutine(AttackAnim(leftPunch, leftPunchCollider));
             }
             else
             {
-                AttackAnim(rightPunch, rightPunchCollider);
+                StartCoroutine(AttackAnim(rightPunch, rightPunchCollider));
             }
+            special = false;
         }
 
         if (Input.GetKeyDown(KeyCode.E) && horn.GetComponent<HornAttack>().isRecharged && !gameObject.GetComponent<Player>().isBlocking)
         {
-            AttackAnim(horn, hornCollider);
-            horn.GetComponent<HornAttack>().isRecharged = false;
-            StartCoroutine(ResetSpecial(horn));
+            if (specialCooldown <= 0)
+            {
+                special = true;
+                StartCoroutine(AttackAnim(horn, hornCollider));
+                horn.GetComponent<HornAttack>().isRecharged = false;
+            }
+            else
+            {
+                specialCooldown -= Time.deltaTime;
+            }
         }
     }
 
-    void AttackAnim(GameObject hit, BoxCollider collider)
+    IEnumerator AttackAnim(GameObject hit, BoxCollider collider)
     {
+        yield return new WaitForSeconds(0.1f);
         if (!isAttacking)
         {
             isAttacking = true;
@@ -60,10 +69,5 @@ public class AttackManager : MonoBehaviour
         hit.transform.position = hit.transform.position + hit.transform.right * 0.5f;
         isAttacking = false;
         actualPunch = !actualPunch;
-    }
-    IEnumerator ResetSpecial(GameObject special)
-    {
-        yield return new WaitForSeconds(specialCooldown);
-        special.GetComponent<AttackGeneric>().isRecharged = true;
     }
 }
