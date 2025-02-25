@@ -7,8 +7,10 @@ public class AttackBehaviourDistance : AttackBehaviourGeneric
 {
     public ParticleSystem sprayAttack;
     public Collider sprayCollider;
+
     public override void Attack()
     {
+        audioManager.PlaySFX(audioManager.bomberAttack);
         if (attackCooldown <= 0 && player.HP > 0)
         {
             sprayCollider.enabled = true;

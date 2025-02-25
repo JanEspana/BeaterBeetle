@@ -5149,6 +5149,8 @@ MonoBehaviour:
   isAnt: 0
   isFlyingEnemy: 0
   foodIsAlive: 0
+  audioManager: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 28512f9a7c4f6f446bd314abdf32ccfc, type: 3}
 --- !u!114 &730772339023052022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5163,6 +5165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   range: 0.5
+  walkClip: {fileID: 8300000, guid: 46f6ce7a4c619844ba78e31e74dc6fe6, type: 3}
+  audioManager: {fileID: 0}
 --- !u!195 &6986266950288518349
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5199,6 +5203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   attackCooldown: 3
+  audioManager: {fileID: 0}
   sprayAttack: {fileID: 6742735767649413165}
   sprayCollider: {fileID: 7928192342488730363}
 --- !u!114 &3621051217991913306

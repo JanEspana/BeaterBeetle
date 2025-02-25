@@ -164,6 +164,8 @@ MonoBehaviour:
   isAnt: 0
   isFlyingEnemy: 1
   foodIsAlive: 0
+  audioManager: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 73885cf7432312148bd4a267b8830bbc, type: 3}
 --- !u!114 &1249609682014175997
 MonoBehaviour:
   m_ObjectHideFlags: 0

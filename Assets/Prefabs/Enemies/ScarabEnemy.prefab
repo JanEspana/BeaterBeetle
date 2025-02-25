@@ -224,6 +224,8 @@ MonoBehaviour:
   isAnt: 0
   isFlyingEnemy: 0
   foodIsAlive: 0
+  audioManager: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 1fd570be2be2ab1408802e7b04d73f6b, type: 3}
 --- !u!114 &730772339023052022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   range: 0.5
+  walkClip: {fileID: 8300000, guid: c0900b5de2f38ef4ebd75002a0868f65, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &5395014725901845625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   attackCooldown: 1
+  audioManager: {fileID: 0}
   leftPunch: {fileID: 5705530950396767097}
   rightPunch: {fileID: 3552336577709297571}
   actualPunch: 0

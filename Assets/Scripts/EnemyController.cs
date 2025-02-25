@@ -15,6 +15,8 @@ public class EnemyController : Character
     public bool isAnt = false;
     public bool isFlyingEnemy;
     public bool foodIsAlive = false;
+    public AudioManager audioManager;
+    public AudioClip deathClip;
     // Start is called before the first frame update
 
     public void Awake()
@@ -29,6 +31,7 @@ public class EnemyController : Character
         {
             target = GameObject.FindGameObjectWithTag("Player");
         }
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
 
     }
     void Start()
@@ -77,6 +80,10 @@ public class EnemyController : Character
     }
     public override void Die()
     {
+        if (!isAnt)
+        {
+            audioManager.PlaySFX(deathClip);
+        }
         HP = 0;
         GoToState<DieSO>();
     }

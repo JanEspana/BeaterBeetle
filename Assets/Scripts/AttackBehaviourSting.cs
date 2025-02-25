@@ -9,6 +9,7 @@ public class AttackBehaviourSting : AttackBehaviourGeneric
     Transform targetPosition;
     public override void Attack()
     {
+        audioManager.PlaySFX(audioManager.waspFly);
         if (attackCooldown <= 0 && player.HP > 0)
         {
             targetPosition = player.transform;
@@ -34,6 +35,11 @@ public class AttackBehaviourSting : AttackBehaviourGeneric
         if (collision.gameObject.tag == "Player" && !isGrounded)
         {
             player.TakeDamage(3);
+            audioManager.PlaySFX(audioManager.waspHit);
+        }
+        else if (collision.gameObject.tag == "Floor" && !isGrounded)
+        {
+            audioManager.PlaySFX(audioManager.waspMiss);
         }
         isGrounded = true;
         rb.velocity = Vector3.zero;

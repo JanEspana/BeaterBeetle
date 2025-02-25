@@ -10,10 +10,13 @@ public class Chase : MonoBehaviour
     public float range;
     NavMeshAgent agent;
     Rigidbody rb;
+    public AudioClip walkClip;
+    public AudioManager audioManager;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
     public void ChaseTarget(Transform target, Transform self)
     {
@@ -29,6 +32,7 @@ public class Chase : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         agent.SetDestination(target.position);
+        audioManager.PlaySFX(walkClip);
         //cambia la velocidad del agente
     }
     public void StopChase()
