@@ -11,24 +11,31 @@ public class WaspAnim : MonoBehaviour
     void Update()
     {
         currentState = GetComponent<EnemyController>().currentState;
-        if (abs.attackCooldown >= 3)
+        if (currentState.GetType() == typeof(DieSO))
         {
-            isAttacking = true;
-        }
-
-        if (abs.attackCooldown <= 0.5f && isAttacking)
-        {
-            anim.SetTrigger("Attack");
-            isAttacking = false;
-        }
-
-        if (abs.isGrounded)
-        {
-            anim.SetBool("isStuck", true);
+            anim.SetTrigger("Die");
         }
         else
         {
-            anim.SetBool("isStuck", false);
+            if (abs.attackCooldown >= 3)
+            {
+                isAttacking = true;
+            }
+
+            if (abs.attackCooldown <= 0.5f && isAttacking)
+            {
+                anim.SetTrigger("Attack");
+                isAttacking = false;
+            }
+
+            if (abs.isGrounded)
+            {
+                anim.SetBool("isStuck", true);
+            }
+            else
+            {
+                anim.SetBool("isStuck", false);
+            }
         }
     }
 }

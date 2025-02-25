@@ -13,26 +13,33 @@ public class GrasshopperAnim : MonoBehaviour
 
     private void Update()
     {
-        if (abj.attackCooldown >= 3)
+        if (currentState.GetType() == typeof(DieSO))
         {
-            jumpCharged = true;
+            anim.SetTrigger("Die");
         }
-        if (abj.attackCooldown <= 1.6f && abj.isInRange)
+        else
         {
-            kickCharged = true;
-        }
-        currentState = GetComponent<EnemyController>().currentState;
+            if (abj.attackCooldown >= 3)
+            {
+                jumpCharged = true;
+            }
+            if (abj.attackCooldown <= 1.6f && abj.isInRange)
+            {
+                kickCharged = true;
+            }
+            currentState = GetComponent<EnemyController>().currentState;
 
 
-        if (abj.attackCooldown <= 0.8f && abj.isInRange && kickCharged)
-        {
-            anim.SetTrigger("Kick");
-            kickCharged = false;
-        }
-        else if (abj.attackCooldown <= 1.5 && !abj.isInRange && jumpCharged)
-        {
-            anim.SetTrigger("Jump");
-            jumpCharged = false;
+            if (abj.attackCooldown <= 0.8f && abj.isInRange && kickCharged)
+            {
+                anim.SetTrigger("Kick");
+                kickCharged = false;
+            }
+            else if (abj.attackCooldown <= 1.5 && !abj.isInRange && jumpCharged)
+            {
+                anim.SetTrigger("Jump");
+                jumpCharged = false;
+            }
         }
     }
 }

@@ -14,14 +14,21 @@ public abstract class AnimGeneric : MonoBehaviour
     private void Update()
     {
         currentState = GetComponent<EnemyController>().currentState;
-        if (currentState.GetType() == typeof(ChaseSO))
+        if (currentState.GetType() == typeof(DieSO))
         {
-            anim.SetBool("isWalking", true);
+            anim.SetTrigger("Die");
         }
         else
         {
-            anim.SetBool("isWalking", false);
-            SpecificAnim();
+            if (currentState.GetType() == typeof(ChaseSO))
+            {
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                anim.SetBool("isWalking", false);
+                SpecificAnim();
+            }
         }
     }
     public abstract void SpecificAnim();
