@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource SFXSource;
     [SerializeField] AudioSource musicSource;
 
+    [Header ("Audio Clips")]
     public AudioClip waspDeath;
     public AudioClip waspFly;
     public AudioClip waspHit;
@@ -19,4 +20,24 @@ public class AudioManager : MonoBehaviour
     public AudioClip mantisDeath;
     public AudioClip mantisWalk;
     public AudioClip mantisHarakiri;
+    public AudioClip grasshopperAtkHit;
+    public AudioClip grasshopperAtkMiss;
+    public AudioClip grasshopperDeath;
+    public AudioClip grasshopperJump;
+    public AudioClip grasshopperKick;
+    public AudioClip grasshopperKickHit;
+    public AudioClip beetleDash;
+    public AudioClip beetleDeath;
+    public AudioClip beetleHornHit;
+    public AudioClip beetleHorn;
+    public AudioClip beetlePunch1Hit;
+    public AudioClip beetlePunch2Hit;
+    public AudioClip beetlePunch1;
+    public AudioClip beetlePunch2;
+    public AudioClip beetleWalk;
+
+    public void PlaySFX(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
+    }
 }
