@@ -10,6 +10,7 @@ public class Player : Character
     public float gainedCalories=100;
     public bool isBlocking;
     public int armor = 0;
+    public DeathMenuManager DeathMenuManager;
     public override void CheckIfAlive(bool hasKnockback)
     {
         if (HP <= 0)
@@ -33,7 +34,7 @@ public class Player : Character
         cam.gameObject.GetComponent<CameraFollow>().enabled = false;
 
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene("MainMenuDemo");
+        DeathMenuManager.activateCanvas();
     }
     private void Update()
     {

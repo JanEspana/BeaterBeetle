@@ -191,7 +191,6 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-    // **Nuevo: Función para iniciar sesión**
     void AttemptLogin()
     {
         StartCoroutine(LoginUser(usernameInput.text, passwordInput.text));
