@@ -14,6 +14,7 @@ TagManager:
   - GameManager
   - UpgradeCanvas
   - Wall
+  - AudioManager
   layers:
   - Default
   - TransparentFX

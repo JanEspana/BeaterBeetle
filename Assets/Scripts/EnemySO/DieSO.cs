@@ -12,12 +12,7 @@ public class DieSO : StatesSO
             ec.target.GetComponent<Player>().calories += ec.target.GetComponent<Player>().gainedCalories;
 
         }*/
-        if (!ec.isAnt)
-        {
-            GameManager.instance.player.GetComponent<Player>().calories += GameManager.instance.player.GetComponent<Player>().gainedCalories;
 
-            GameManager.instance.menuManager.ActiveCanvas();
-        }
         ec.StartCoroutine(FuckingDies(ec));
     }
     public override void OnStateExit(EnemyController ec)
@@ -30,6 +25,12 @@ public class DieSO : StatesSO
     IEnumerator FuckingDies(EnemyController ec)
     {
         yield return new WaitForSeconds(2);
+        if (!ec.isAnt)
+        {
+            GameManager.instance.player.GetComponent<Player>().calories += GameManager.instance.player.GetComponent<Player>().gainedCalories;
+
+            GameManager.instance.menuManager.ActiveCanvas();
+        }
         Destroy(ec.gameObject);
     }
 }
