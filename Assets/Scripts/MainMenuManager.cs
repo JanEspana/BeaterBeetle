@@ -9,15 +9,17 @@ public class MainMenuManager : MonoBehaviour
 {
     private GameObject settingCanvas;
     private UnityEngine.UI.Slider volumeSlider;
-    private GameObject username;
-    private GameObject password;
-    public TextMeshProUGUI feedbackText;
-    private GameObject registerButtonObj;
     private TMP_InputField usernameInput;
     private TMP_InputField passwordInput;
+    public TextMeshProUGUI feedbackText;
+    private GameObject registerButtonObj;
+    private GameObject loginButtonObj;
 
-    private string apiCheckUrl = "http://localhost:3000/users/all";  // URL para verificar username
-    private string apiRegisterUrl = "http://localhost:3000/signup"; // URL para registrar usuario
+    private string apiCheckUrl = "http://localhost:3000/user/all";
+    private string apiRegisterUrl = "http://localhost:3000/signup";
+    private string apiLoginUrl = "http://localhost:3000/login";
+
+    private string authToken = ""; // Aquí almacenaremos el token JWT
 
     private void Awake()
     {
@@ -27,7 +29,6 @@ public class MainMenuManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        // Obtener referencias de los campos de usuario y contraseña
         usernameInput = GetInputField("username");
         passwordInput = GetInputField("password");
         feedbackText = GetFeedbackText();
@@ -45,6 +46,17 @@ public class MainMenuManager : MonoBehaviour
             if (registerButton != null)
             {
                 registerButton.onClick.AddListener(CheckUsernameBeforeRegister);
+            }
+        }
+
+        // **Nuevo: Vincular botón de login**
+        loginButtonObj = GameObject.Find("loginButton");
+        if (loginButtonObj != null)
+        {
+            Button loginButton = loginButtonObj.GetComponent<Button>();
+            if (loginButton != null)
+            {
+                loginButton.onClick.AddListener(AttemptLogin);
             }
         }
 
@@ -103,7 +115,7 @@ public class MainMenuManager : MonoBehaviour
     void CheckUsernameBeforeRegister()
     {
         string usernameToCheck = usernameInput.text;
-        StartCoroutine(CheckUsernameAvailability(usernameToCheck, true)); // Ahora también registra si está disponible
+        StartCoroutine(CheckUsernameAvailability(usernameToCheck, true));
     }
 
     IEnumerator CheckUsernameAvailability(string username, bool registerIfAvailable = false)
@@ -132,7 +144,6 @@ public class MainMenuManager : MonoBehaviour
                 feedbackText.color = usernameTaken ? Color.red : Color.green;
             }
 
-            // Si el username está disponible y se activó la bandera, registrarlo
             if (!usernameTaken && registerIfAvailable)
             {
                 StartCoroutine(RegisterNewUser(username));
@@ -151,10 +162,7 @@ public class MainMenuManager : MonoBehaviour
     IEnumerator RegisterNewUser(string newUsername)
     {
         string passwordText = passwordInput.text;
-        if (string.IsNullOrEmpty(passwordText))
-        {
-            passwordText = "password"; // Si está vacío, usar "password" por defecto
-        }
+        if (string.IsNullOrEmpty(passwordText)) passwordText = "password";
 
         UserRegisterData userData = new UserRegisterData { username = newUsername, password = passwordText };
         string jsonData = JsonUtility.ToJson(userData);
@@ -171,20 +179,57 @@ public class MainMenuManager : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log("Usuario registrado correctamente.");
-                if (feedbackText != null)
-                {
-                    feedbackText.text = "Usuario registrado correctamente.";
-                    feedbackText.color = Color.green;
-                }
+                feedbackText.text = "Usuario registrado correctamente.";
+                feedbackText.color = Color.green;
             }
             else
             {
                 Debug.LogError($"Error al registrar: {request.error}");
-                if (feedbackText != null)
-                {
-                    feedbackText.text = "Error al registrar.";
-                    feedbackText.color = Color.red;
-                }
+                feedbackText.text = "Error al registrar.";
+                feedbackText.color = Color.red;
+            }
+        }
+    }
+
+    // **Nuevo: Función para iniciar sesión**
+    void AttemptLogin()
+    {
+        StartCoroutine(LoginUser(usernameInput.text, passwordInput.text));
+    }
+
+    IEnumerator LoginUser(string username, string password)
+    {
+        UserRegisterData userData = new UserRegisterData { username = username, password = password };
+        string jsonData = JsonUtility.ToJson(userData);
+
+        using (UnityWebRequest request = new UnityWebRequest(apiLoginUrl, "POST"))
+        {
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
+
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                // **Obtener el token de la respuesta JSON**
+                string jsonResponse = request.downloadHandler.text;
+                AuthResponse response = JsonUtility.FromJson<AuthResponse>(jsonResponse);
+
+                authToken = response.token;
+                PlayerPrefs.SetString("authToken", authToken); // Guardar el token en PlayerPrefs
+                PlayerPrefs.Save();
+
+                Debug.Log("Inicio de sesión exitoso. Token guardado.");
+                feedbackText.text = "Inicio de sesión exitoso.";
+                feedbackText.color = Color.green;
+            }
+            else
+            {
+                Debug.LogError($"Error al iniciar sesión: {request.error}");
+                feedbackText.text = "Error al iniciar sesión.";
+                feedbackText.color = Color.red;
             }
         }
     }
@@ -206,5 +251,11 @@ public class MainMenuManager : MonoBehaviour
     {
         public string username;
         public string password;
+    }
+
+    [System.Serializable]
+    public class AuthResponse
+    {
+        public string token;
     }
 }
