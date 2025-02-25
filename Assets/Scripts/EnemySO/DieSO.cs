@@ -18,7 +18,7 @@ public class DieSO : StatesSO
 
             GameManager.instance.menuManager.ActiveCanvas();
         }
-        Destroy(ec.gameObject);
+        ec.StartCoroutine(FuckingDies(ec));
     }
     public override void OnStateExit(EnemyController ec)
     {
@@ -26,5 +26,10 @@ public class DieSO : StatesSO
 
     public override void OnStateUpdate(EnemyController ec)
     {
+    }
+    IEnumerator FuckingDies(EnemyController ec)
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(ec.gameObject);
     }
 }
