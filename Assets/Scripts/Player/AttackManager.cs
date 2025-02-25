@@ -38,16 +38,10 @@ public class AttackManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && horn.GetComponent<HornAttack>().isRecharged && !gameObject.GetComponent<Player>().isBlocking)
         {
-            if (specialCooldown <= 0)
-            {
-                special = true;
-                StartCoroutine(AttackAnim(horn, hornCollider));
-                horn.GetComponent<HornAttack>().isRecharged = false;
-            }
-            else
-            {
-                StartCoroutine(ResetSpecial(horn));
-            }
+            special = true;
+            StartCoroutine(AttackAnim(horn, hornCollider));
+            horn.GetComponent<HornAttack>().isRecharged = false;
+            StartCoroutine(ResetSpecial(horn));
         }
     }
 

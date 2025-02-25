@@ -9,16 +9,17 @@ public class John : MonoBehaviour
     public Player player;
     public AttackManager am;
     bool isAttacking;
-    bool punch;
+    bool punch, horn;
 
     private void Update()
     {
         anim.SetBool("isWalking", isWalking());
         if (am.isAttacking)
         {
-            if (am.special && am.specialCooldown <= 0)
+            if (am.special && horn)
             {
                 anim.SetTrigger("Horn");
+                horn = false;
             }
             else if (!am.special && punch)
             {
@@ -36,6 +37,10 @@ public class John : MonoBehaviour
         else if (!am.special)
         {
             punch = true;
+        }
+        else if (am.special)
+        {
+            horn = true;
         }
     }
     bool isWalking()
