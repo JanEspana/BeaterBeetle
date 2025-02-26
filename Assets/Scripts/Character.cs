@@ -9,6 +9,8 @@ public abstract class Character : MonoBehaviour
     public bool hasKnockback;
     public bool isInvincible = false;
     public GameObject slider;
+    public AudioManager audioManager;
+
     public void TakeDamage(float dmg)
     {
         if (!isInvincible)

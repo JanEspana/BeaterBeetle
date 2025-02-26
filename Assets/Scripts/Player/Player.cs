@@ -11,6 +11,7 @@ public class Player : Character
     public bool isBlocking;
     public int armor = 0;
     public DeathMenuManager DeathMenuManager;
+    public AudioManager audioManager;
     public override void CheckIfAlive(bool hasKnockback)
     {
         if (HP <= 0)
@@ -42,6 +43,7 @@ public class Player : Character
         {
             isBlocking = true;
             gameObject.GetComponent<Movement>().speed=0;
+            
         }
         if (Input.GetMouseButtonUp(1))
         {

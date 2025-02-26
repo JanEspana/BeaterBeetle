@@ -15,7 +15,6 @@ public class EnemyController : Character
     public bool isAnt = false;
     public bool isFlyingEnemy;
     public bool foodIsAlive = false;
-    public AudioManager audioManager;
     public AudioClip deathClip;
     // Start is called before the first frame update
 
