@@ -13,6 +13,7 @@ public class GrasshopperAnim : MonoBehaviour
 
     private void Update()
     {
+        currentState = GetComponent<EnemyController>().currentState;
         if (currentState.GetType() == typeof(DieSO))
         {
             anim.SetTrigger("Die");
