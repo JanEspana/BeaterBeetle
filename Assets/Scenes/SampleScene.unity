@@ -2232,7 +2232,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 478248591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1558081712}
+        m_TargetAssemblyTypeName: DeathMenuManager, Assembly-CSharp
+        m_MethodName: returnToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &478248591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3921,7 +3933,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 824466333}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1558081712}
+        m_TargetAssemblyTypeName: DeathMenuManager, Assembly-CSharp
+        m_MethodName: quitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &824466333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4532,7 +4556,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 978288497}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1558081712}
+        m_TargetAssemblyTypeName: DeathMenuManager, Assembly-CSharp
+        m_MethodName: restartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &978288497
 MonoBehaviour:
   m_ObjectHideFlags: 0
