@@ -23,7 +23,8 @@ public class UpgradeMenu : MonoBehaviour
         {
             //pone una upgrade generica por si no hay para elegir
             upgrade = leftoverUpgradeSO;
-            gameObject.GetComponent<Image>().sprite = upgrade.icon;
+            gameObject.GetComponentInChildren<Image>().sprite = upgrade.icon;
+            //gameObject.GetComponent<Image>().sprite = upgrade.icon;
             gameObject.GetComponentInChildren<TextMeshProUGUI>().text = upgrade.upgradeName;
         }
 

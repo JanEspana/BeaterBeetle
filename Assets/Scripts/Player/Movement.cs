@@ -43,7 +43,7 @@ public class Movement : MonoBehaviour
             Vector3 move = transform.right * x + transform.forward * z;
             rb.velocity = new Vector3(move.x * speed/2, rb.velocity.y, move.z * speed/2);
 
-            audioManager.PlaySFX(audioManager.beetleWalk);
+            //audioManager.PlaySFX(audioManager.beetleWalk);
         }
     }
     void Jump()

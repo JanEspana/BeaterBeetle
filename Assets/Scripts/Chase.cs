@@ -12,6 +12,7 @@ public class Chase : MonoBehaviour
     Rigidbody rb;
     public AudioClip walkClip;
     public AudioManager audioManager;
+    public bool soundPlayed = true;
 
     private void Awake()
     {
@@ -32,8 +33,20 @@ public class Chase : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         agent.SetDestination(target.position);
-        audioManager.PlaySFX(walkClip);
+        if (soundPlayed)
+        {
+            soundPlayed = false;
+            Wait();
+        }
+
         //cambia la velocidad del agente
+    }
+    //corutina para esperar medio segundo
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        audioManager.PlaySFX(walkClip);
+        soundPlayed = true;
     }
     public void StopChase()
     {

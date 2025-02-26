@@ -10,9 +10,10 @@ public class AttackBehaviourDistance : AttackBehaviourGeneric
 
     public override void Attack()
     {
-        audioManager.PlaySFX(audioManager.bomberAttack);
         if (attackCooldown <= 0 && player.HP > 0)
         {
+            audioManager.PlaySFX(audioManager.bomberAttack);
+
             sprayCollider.enabled = true;
             attackCooldown = 3;
             sprayAttack.Play();

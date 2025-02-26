@@ -9,6 +9,7 @@ public class AttackBehaviourAnt : AttackBehaviourGeneric
     {
         enemyController = gameObject.GetComponent<EnemyController>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
     public override void Attack()
     {

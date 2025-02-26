@@ -9,9 +9,10 @@ public class AttackBehaviourSting : AttackBehaviourGeneric
     Transform targetPosition;
     public override void Attack()
     {
-        audioManager.PlaySFX(audioManager.waspFly);
         if (attackCooldown <= 0 && player.HP > 0)
         {
+            audioManager.PlaySFX(audioManager.waspFly);
+
             targetPosition = player.transform;
             transform.LookAt(targetPosition);
             rb.AddForce(transform.forward * 1000);
