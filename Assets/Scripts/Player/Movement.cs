@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
         if (canMove)
         {
             Vector3 move = transform.right * x + transform.forward * z;
-            rb.velocity = new Vector3(move.x * speed, rb.velocity.y, move.z * speed);
+            rb.velocity = new Vector3(move.x * speed/2, rb.velocity.y, move.z * speed/2);
         }
     }
     void Jump()

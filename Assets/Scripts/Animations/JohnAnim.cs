@@ -9,38 +9,60 @@ public class John : MonoBehaviour
     public Player player;
     public AttackManager am;
     bool isAttacking;
-    bool punch, horn;
+    bool punch, horn, dash;
 
     private void Update()
     {
-        anim.SetBool("isWalking", isWalking());
-        if (am.isAttacking)
+        if (player.HP > 0)
         {
-            if (am.special && horn)
+            anim.SetBool("isWalking", isWalking());
+            if (am.isAttacking)
             {
-                anim.SetTrigger("Horn");
-                horn = false;
+                if (am.special && horn)
+                {
+                    anim.SetTrigger("Horn");
+                    horn = false;
+                }
+                else if (!am.special && punch)
+                {
+                    if (am.actualPunch)
+                    {
+                        anim.SetTrigger("LeftPunch");
+                    }
+                    else
+                    {
+                        anim.SetTrigger("RightPunch");
+                    }
+                    punch = false;
+                }
             }
-            else if (!am.special && punch)
+            else if (!am.special)
             {
-                if (am.actualPunch)
-                {
-                    anim.SetTrigger("LeftPunch");
-                }
-                else
-                {
-                    anim.SetTrigger("RightPunch");
-                }
-                punch = false;
+                punch = true;
             }
+            else if (am.special)
+            {
+                horn = true;
+            }
+
+            
         }
-        else if (!am.special)
+        else
         {
-            punch = true;
+            anim.SetTrigger("Die");
         }
-        else if (am.special)
+
+        if (isWalking())
         {
-            horn = true;
+            if (player.gameObject.GetComponent<Movement>().dashCooldown >= 1 && !dash)
+            {
+                anim.SetTrigger("Dash");
+                dash = true;
+            }
+            else
+            {
+                dash = false;
+            }
         }
     }
     bool isWalking()
