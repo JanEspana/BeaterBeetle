@@ -12,6 +12,7 @@ public class AttackBehaviourAnt : AttackBehaviourGeneric
     }
     public override void Attack()
     {
+        audioManager.PlaySFX(audioManager.antBite);
         if (player.HP > 0)
         {
             if (!enemyController.foodIsAlive && !player.isBlocking)

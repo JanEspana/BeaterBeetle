@@ -22,12 +22,14 @@ public class EggScript : Character
 
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         StartCoroutine(StartEgg());
     }
 
     private IEnumerator StartEgg()
     {
         yield return new WaitForSeconds(3);
+        audioManager.PlaySFX(audioManager.eggBreak);
         //haz un bucle 
         for (int i = 0; i < AntSpawnAmount; i++)
         {
