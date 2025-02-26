@@ -11,8 +11,7 @@ public class DeathMenuManager : MonoBehaviour
     public MenuManager menuManager;
     public TMP_Text roundcount;
 
-    private string apiGetMaxRoundsUrl = "http://localhost:3000/user/maxRounds";
-    private string apiUpdateMaxRoundsUrl = "http://localhost:3000/user/updateMaxRounds";
+    private string apiBaseUrl = "http://localhost:3000/user/";
 
     void Awake()
     {
@@ -52,14 +51,17 @@ public class DeathMenuManager : MonoBehaviour
     IEnumerator CheckAndUpdateMaxRounds()
     {
         string authToken = PlayerPrefs.GetString("authToken", "");
+        string username = PlayerPrefs.GetString("username", "");
 
-        if (string.IsNullOrEmpty(authToken))
+        if (string.IsNullOrEmpty(authToken) || string.IsNullOrEmpty(username))
         {
             Debug.Log("No hay usuario logeado.");
-            yield break; // Sale de la función si no hay usuario logeado
+            yield break;
         }
 
-        using (UnityWebRequest request = UnityWebRequest.Get(apiGetMaxRoundsUrl))
+        string apiUrl = $"{apiBaseUrl}{username}/maxRounds";
+
+        using (UnityWebRequest request = UnityWebRequest.Get(apiUrl))
         {
             request.SetRequestHeader("Authorization", "Bearer " + authToken);
 
@@ -73,17 +75,17 @@ public class DeathMenuManager : MonoBehaviour
                 if (menuManager.Round > response.maxRounds)
                 {
                     Debug.Log($"Nuevo récord de rondas: {menuManager.Round} (anterior: {response.maxRounds})");
-                    StartCoroutine(UpdateMaxRounds(menuManager.Round));
+                    StartCoroutine(UpdateMaxRounds(username, menuManager.Round));
                 }
             }
             else
             {
-                Debug.LogError("Error al obtener maxRounds: " + request.error);
+                Debug.LogError($"Error al obtener maxRounds: {request.error} - {request.downloadHandler.text}");
             }
         }
     }
 
-    IEnumerator UpdateMaxRounds(int newMaxRounds)
+    IEnumerator UpdateMaxRounds(string username, int newMaxRounds)
     {
         string authToken = PlayerPrefs.GetString("authToken", "");
 
@@ -93,10 +95,11 @@ public class DeathMenuManager : MonoBehaviour
             yield break;
         }
 
+        string apiUrl = $"{apiBaseUrl}{username}/updateMaxRounds";
         UserMaxRoundsUpdateData updateData = new UserMaxRoundsUpdateData { maxRounds = newMaxRounds };
         string jsonData = JsonUtility.ToJson(updateData);
 
-        using (UnityWebRequest request = new UnityWebRequest(apiUpdateMaxRoundsUrl, "POST"))
+        using (UnityWebRequest request = new UnityWebRequest(apiUrl, "POST"))
         {
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
             request.uploadHandler = new UploadHandlerRaw(bodyRaw);
@@ -112,7 +115,7 @@ public class DeathMenuManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Error al actualizar maxRounds: " + request.error);
+                Debug.LogError($"Error al actualizar maxRounds: {request.error} - {request.downloadHandler.text}");
             }
         }
     }
