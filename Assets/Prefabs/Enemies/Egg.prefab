@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5370022411559876699}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -197,7 +197,11 @@ PrefabInstance:
       value: Egg
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8174907068477135312, guid: df4135156b8d8e941b7cdd805f1c92ae, type: 3}
+    - {fileID: 4974984522306558807, guid: df4135156b8d8e941b7cdd805f1c92ae, type: 3}
+    - {fileID: 5050422055867433376, guid: df4135156b8d8e941b7cdd805f1c92ae, type: 3}
+    - {fileID: 65702495048144492, guid: df4135156b8d8e941b7cdd805f1c92ae, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df4135156b8d8e941b7cdd805f1c92ae, type: 3}
