@@ -13,7 +13,5 @@ public class UpgradeManager : MonoBehaviour
     {
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
-        menuManager = GameObject.Find("GameManager").GetComponent<MenuManager>();
-
     }
 }

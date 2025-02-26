@@ -26,7 +26,7 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.timeScale==1)
         {
             if (actualPunch)
             {
@@ -40,7 +40,7 @@ public class AttackManager : MonoBehaviour
             special = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && horn.GetComponent<HornAttack>().isRecharged && !gameObject.GetComponent<Player>().isBlocking)
+        if (Input.GetKeyDown(KeyCode.E) && horn.GetComponent<HornAttack>().isRecharged && !gameObject.GetComponent<Player>().isBlocking && Time.timeScale == 1)
         {
             special = true;
             StartCoroutine(AttackAnim(horn, hornCollider));

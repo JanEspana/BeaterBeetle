@@ -35,7 +35,6 @@ public class UpgradeMenu : MonoBehaviour
     public void ApplyUpgrade()
     {
         upgrade.ApplyUpgrade();
-        menuManager = GameObject.Find("GameManager").GetComponent<MenuManager>();
         menuManager.ActiveCanvas();
 
     }
