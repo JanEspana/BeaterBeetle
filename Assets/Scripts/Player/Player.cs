@@ -11,7 +11,10 @@ public class Player : Character
     public bool isBlocking;
     public int armor = 0;
     public DeathMenuManager DeathMenuManager;
-    public AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
     public override void CheckIfAlive(bool hasKnockback)
     {
         if (HP <= 0)
@@ -36,6 +39,7 @@ public class Player : Character
 
         Cursor.lockState = CursorLockMode.None;
         DeathMenuManager.activateCanvas();
+        audioManager.PlaySFX(audioManager.beetleDeath);
     }
     private void Update()
     {
