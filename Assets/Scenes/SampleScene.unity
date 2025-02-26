@@ -4795,7 +4795,7 @@ MonoBehaviour:
   armor: {fileID: 74800516}
   maxHP: 10
   healedHP: 3
-  Round: 4
+  Round: 1
   price: 100
   hpPrice: 50
   statsGainedFromBuying: 1
