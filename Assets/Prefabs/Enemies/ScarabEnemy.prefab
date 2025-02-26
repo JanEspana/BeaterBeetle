@@ -213,6 +213,7 @@ MonoBehaviour:
   hasKnockback: 0
   isInvincible: 0
   slider: {fileID: 0}
+  audioManager: {fileID: 0}
   currentState: {fileID: 11400000, guid: 4f468f96d55804a4bb47b339eea98885, type: 2}
   chase: {fileID: 730772339023052022}
   attack: {fileID: 5395014725901845625}
@@ -224,7 +225,6 @@ MonoBehaviour:
   isAnt: 0
   isFlyingEnemy: 0
   foodIsAlive: 0
-  audioManager: {fileID: 0}
   deathClip: {fileID: 8300000, guid: 1fd570be2be2ab1408802e7b04d73f6b, type: 3}
 --- !u!114 &730772339023052022
 MonoBehaviour:
@@ -418,8 +418,10 @@ MonoBehaviour:
   dmg: 1
   rivalTag: Player
   isRecharged: 1
+  audioManager: {fileID: 0}
   blockable: 1
   originalPosition: {x: 0, y: 0, z: 0}
+  hitSFX: {fileID: 8300000, guid: 0bbeca24893fc4c43bc0fc26db6d68b5, type: 3}
 --- !u!1 &5705530950396767097
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,8 +543,10 @@ MonoBehaviour:
   dmg: 1
   rivalTag: Player
   isRecharged: 1
+  audioManager: {fileID: 0}
   blockable: 1
   originalPosition: {x: 0, y: 0, z: 0}
+  hitSFX: {fileID: 8300000, guid: 0bbeca24893fc4c43bc0fc26db6d68b5, type: 3}
 --- !u!1001 &3800648095769405391
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,8 +6,10 @@ public class Punch : AttackGeneric
 {
     public bool blockable;
     public Vector3 originalPosition;
+    public AudioClip hitSFX;
     public void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         originalPosition = transform.position;
     }
     public override void OnTriggerEnter(Collider other)
@@ -34,6 +36,7 @@ public class Punch : AttackGeneric
                     other.gameObject.GetComponent<Character>().TakeDamage(dmg);
                 }
             }
+            audioManager.PlaySFX(hitSFX);
             Debug.Log("Punch");
         }
     }

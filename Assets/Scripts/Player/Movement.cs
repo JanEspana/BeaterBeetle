@@ -12,11 +12,16 @@ public class Movement : MonoBehaviour
     public float dashRecharge = 2;
     public float jumpForce;
     private bool canMove = true;
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
     private void Update()
     {
@@ -37,6 +42,8 @@ public class Movement : MonoBehaviour
         {
             Vector3 move = transform.right * x + transform.forward * z;
             rb.velocity = new Vector3(move.x * speed/2, rb.velocity.y, move.z * speed/2);
+
+            audioManager.PlaySFX(audioManager.beetleWalk);
         }
     }
     void Jump()
@@ -52,6 +59,7 @@ public class Movement : MonoBehaviour
         {
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
+                audioManager.PlaySFX(audioManager.beetleDash);
                 speed *= 5;
                 dashCooldown = dashRecharge;
                 StartCoroutine(DeactivateDash());

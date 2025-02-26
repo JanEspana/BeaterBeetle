@@ -793,6 +793,8 @@ MonoBehaviour:
   beetlePunch1: {fileID: 8300000, guid: d45843307547f0b4e83b4732bb26dd40, type: 3}
   beetlePunch2: {fileID: 8300000, guid: ab534d3be54e535418b1bd1c67a43f9a, type: 3}
   beetleWalk: {fileID: 8300000, guid: c0900b5de2f38ef4ebd75002a0868f65, type: 3}
+  antBite: {fileID: 0}
+  eggBreak: {fileID: 0}
 --- !u!4 &228777009
 Transform:
   m_ObjectHideFlags: 0
@@ -1991,8 +1993,10 @@ MonoBehaviour:
   dmg: 1.5
   rivalTag: Enemy
   isRecharged: 1
+  audioManager: {fileID: 0}
   blockable: 1
   originalPosition: {x: 0, y: 0, z: 0}
+  hitSFX: {fileID: 8300000, guid: 0bbeca24893fc4c43bc0fc26db6d68b5, type: 3}
 --- !u!1 &443445090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,6 +2118,7 @@ MonoBehaviour:
   dmg: 3
   rivalTag: Enemy
   isRecharged: 1
+  audioManager: {fileID: 0}
 --- !u!1 &466205651
 GameObject:
   m_ObjectHideFlags: 0
@@ -5019,8 +5024,10 @@ MonoBehaviour:
   dmg: 1.5
   rivalTag: Enemy
   isRecharged: 1
+  audioManager: {fileID: 0}
   blockable: 1
   originalPosition: {x: 0, y: 0, z: 0}
+  hitSFX: {fileID: 8300000, guid: 0bbeca24893fc4c43bc0fc26db6d68b5, type: 3}
 --- !u!1 &1144076426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5485,6 +5492,7 @@ MonoBehaviour:
   attackCooldown: 0.3
   specialCooldown: 3
   actualPunch: 1
+  audioManager: {fileID: 0}
 --- !u!114 &1178522516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5501,6 +5509,7 @@ MonoBehaviour:
   hasKnockback: 0
   isInvincible: 0
   slider: {fileID: 364942991}
+  audioManager: {fileID: 0}
   cam: {fileID: 963194227}
   calories: 0
   gainedCalories: 100

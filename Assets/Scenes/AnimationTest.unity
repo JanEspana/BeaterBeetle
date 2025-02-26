@@ -4376,6 +4376,7 @@ MonoBehaviour:
   attackCooldown: 0.3
   specialCooldown: 3
   actualPunch: 1
+  audioManager: {fileID: 0}
 --- !u!114 &1178522516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4392,6 +4393,7 @@ MonoBehaviour:
   hasKnockback: 0
   isInvincible: 0
   slider: {fileID: 364942991}
+  audioManager: {fileID: 0}
   cam: {fileID: 963194227}
   calories: 0
   gainedCalories: 100

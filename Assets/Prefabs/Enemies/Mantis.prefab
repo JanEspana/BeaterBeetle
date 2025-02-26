@@ -319,6 +319,7 @@ MonoBehaviour:
   hasKnockback: 0
   isInvincible: 0
   slider: {fileID: 0}
+  audioManager: {fileID: 0}
   currentState: {fileID: 11400000, guid: 4f468f96d55804a4bb47b339eea98885, type: 2}
   chase: {fileID: 730772339023052022}
   attack: {fileID: 1876610720112752561}
@@ -330,8 +331,7 @@ MonoBehaviour:
   isAnt: 0
   isFlyingEnemy: 0
   foodIsAlive: 0
-  audioManager: {fileID: 0}
-  deathClip: {fileID: 8300000, guid: c33850803b32da543a981b5c922a2e73, type: 3}
+  deathClip: {fileID: 8300000, guid: 974e53665f429054b8df9ba28707b0df, type: 3}
 --- !u!114 &730772339023052022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,8 +527,10 @@ MonoBehaviour:
   dmg: 1
   rivalTag: Player
   isRecharged: 1
+  audioManager: {fileID: 0}
   blockable: 0
   originalPosition: {x: 0, y: -0.45, z: 0.75}
+  hitSFX: {fileID: 8300000, guid: fbc53799dfe89a44693e9d9ce9fdd503, type: 3}
 --- !u!54 &807664637533769335
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -678,8 +680,10 @@ MonoBehaviour:
   dmg: 2
   rivalTag: Player
   isRecharged: 1
+  audioManager: {fileID: 0}
   blockable: 1
   originalPosition: {x: 0, y: 0, z: 0.75}
+  hitSFX: {fileID: 8300000, guid: fbc53799dfe89a44693e9d9ce9fdd503, type: 3}
 --- !u!54 &3516017428093751981
 Rigidbody:
   m_ObjectHideFlags: 0
