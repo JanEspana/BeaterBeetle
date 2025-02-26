@@ -4789,6 +4789,10 @@ MonoBehaviour:
   hpBar: {fileID: 1469821292}
   UIhpBar: {fileID: 364942993}
   calories: {fileID: 644743956}
+  attack: {fileID: 2113389498}
+  speed: {fileID: 1723696107}
+  cd: {fileID: 1144076428}
+  armor: {fileID: 74800516}
   maxHP: 10
   healedHP: 3
   Round: 1
@@ -4798,6 +4802,12 @@ MonoBehaviour:
   foodRoundManager: {fileID: 269441684}
   sliderCanvas: {fileID: 1225311443}
   player: {fileID: 0}
+  buyingButtons:
+  - {fileID: 1405095183}
+  - {fileID: 250592724}
+  - {fileID: 1318668411}
+  - {fileID: 807231595}
+  healthBuy: {fileID: 388127512}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,7 +7687,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528741079}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

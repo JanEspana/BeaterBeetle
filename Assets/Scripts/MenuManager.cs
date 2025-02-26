@@ -8,6 +8,10 @@ public class MenuManager : MonoBehaviour
 {
     public Slider hpBar, UIhpBar;
     public TextMeshProUGUI calories;
+    public TextMeshProUGUI attack;
+    public TextMeshProUGUI speed;
+    public TextMeshProUGUI cd;
+    public TextMeshProUGUI armor;
     public float maxHP = 10;
     public float healedHP = 3;
     public int Round = 1;
@@ -17,6 +21,8 @@ public class MenuManager : MonoBehaviour
     public FoodRoundManager foodRoundManager;
     public GameObject sliderCanvas;
     public Player player;
+    public List<GameObject> buyingButtons = new List<GameObject>();
+    public GameObject healthBuy;
     public void ActiveCanvas()
     {
         player = GameManager.instance.player.GetComponent<Player>();
@@ -33,6 +39,15 @@ public class MenuManager : MonoBehaviour
         hpBar.value = GameManager.instance.player.GetComponent<Player>().HP/ maxHP;
         UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
         calories.text = GameManager.instance.player.GetComponent<Player>().calories.ToString();
+        foreach (GameObject button in buyingButtons)
+        {
+            button.GetComponentInChildren<TextMeshProUGUI>().text = price.ToString();
+        }
+        healthBuy.GetComponentInChildren<TextMeshProUGUI>().text = hpPrice.ToString();
+        attack.text = player.GetComponent<AttackManager>().leftPunch.GetComponent<Punch>().dmg.ToString();
+        speed.text = player.gameObject.GetComponent<Movement>().speed.ToString();
+        cd.text = player.GetComponent<AttackManager>().specialCooldown.ToString();
+        armor.text = player.armor.ToString();
     }
     public void NextBattle()
     {
@@ -70,6 +85,7 @@ public class MenuManager : MonoBehaviour
             player.GetComponent<AttackManager>().rightPunch.GetComponent<Punch>().dmg += statsGainedFromBuying;
             player.calories -= price;
             calories.text = player.calories.ToString();
+            attack.text = player.GetComponent<AttackManager>().leftPunch.GetComponent<Punch>().dmg.ToString();
         }
     }
     public void UpgradeSpeed()
@@ -79,6 +95,7 @@ public class MenuManager : MonoBehaviour
             player.gameObject.GetComponent<Movement>().speed += statsGainedFromBuying;
             player.calories -= price;
             calories.text = player.calories.ToString();
+            speed.text = player.gameObject.GetComponent<Movement>().speed.ToString();
         }
     }
     public void UpgradeCD()
@@ -88,6 +105,7 @@ public class MenuManager : MonoBehaviour
             player.GetComponent<AttackManager>().specialCooldown -= statsGainedFromBuying/2.5f;
             player.calories -= price;
             calories.text = player.calories.ToString();
+            cd.text = player.GetComponent<AttackManager>().specialCooldown.ToString();
         }
     }
     public void UpgradeArmor()
@@ -97,6 +115,7 @@ public class MenuManager : MonoBehaviour
             player.armor += (int)statsGainedFromBuying;
             player.calories -= price;
             calories.text = player.calories.ToString();
+            armor.text = player.armor.ToString();
         }
     }
 }
