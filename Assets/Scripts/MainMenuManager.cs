@@ -89,6 +89,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void quitGame()
     {
+        PlayerPrefs.DeleteKey("authToken");
+        PlayerPrefs.Save();
         Application.Quit();
     }
 
