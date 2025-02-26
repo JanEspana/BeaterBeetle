@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DeathMenuManager : MonoBehaviour
 {
     public List<GameObject> gameObjects;
+    public  MenuManager player;
+    public TMP_Text roundcount;
 
     // Start is called before the first frame update
     void Awake()
@@ -36,5 +39,8 @@ public class DeathMenuManager : MonoBehaviour
         }
 
         gameObject.GetComponent<Canvas>().enabled=true;
+
+        roundcount.text = player.Round.ToString();
+        
     }
 }
