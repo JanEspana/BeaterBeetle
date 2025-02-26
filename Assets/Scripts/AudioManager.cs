@@ -35,6 +35,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip beetlePunch1;
     public AudioClip beetlePunch2;
     public AudioClip beetleWalk;
+    public AudioClip antBite;
+    public AudioClip eggBreak;
 
     public void PlaySFX(AudioClip clip)
     {
