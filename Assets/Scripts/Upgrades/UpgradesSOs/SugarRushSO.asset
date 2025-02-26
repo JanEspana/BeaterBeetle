@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40f5b5a55268c74f80c4e0e04f79886, type: 3}
   m_Name: SugarRushSO
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -781322724, guid: f9816ba27b5178d44818d114a81a7819, type: 3}
   upgradeName: Sugar Rush
+  description: +All
   overallBoost: 1

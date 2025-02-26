@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546756c76652eee42a4ce6e3a03d5689, type: 3}
   m_Name: ThousandNeedlesSO
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -1828362490, guid: f9816ba27b5178d44818d114a81a7819, type: 3}
   upgradeName: Thousand Needles
+  description: -Atk +Atk speed
   damageMultiplier: 0.5
   cooldown: 0.15

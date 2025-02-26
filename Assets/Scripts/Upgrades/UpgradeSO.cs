@@ -8,6 +8,7 @@ public abstract class UpgradeSO : ScriptableObject
 {
     public Sprite icon;
     public string upgradeName;
+    public string description;
 
     public abstract void ApplyUpgrade();
 }

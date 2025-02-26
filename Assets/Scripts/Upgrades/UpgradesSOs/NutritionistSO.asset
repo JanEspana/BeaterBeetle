@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb64bc82eae8ae48815ec29c720a915, type: 3}
   m_Name: NutritionistSO
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -78993278, guid: f9816ba27b5178d44818d114a81a7819, type: 3}
   upgradeName: Nutritionist
+  description: +HP after battle
   healthRegen: 0
   menuManager: {fileID: 0}

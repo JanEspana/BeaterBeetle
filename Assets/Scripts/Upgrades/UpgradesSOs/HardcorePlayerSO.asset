@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4597cbc4a3f1c49980f628b921435c, type: 3}
   m_Name: HardcorePlayerSO
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1855818930, guid: f9816ba27b5178d44818d114a81a7819, type: 3}
   upgradeName: Glass Cannon
+  description: --HP ++Atk
   attackMultiplier: 5
   hpMultiplier: 0.2
   menuManager: {fileID: 0}

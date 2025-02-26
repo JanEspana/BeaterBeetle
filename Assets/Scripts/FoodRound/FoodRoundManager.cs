@@ -29,7 +29,7 @@ public class FoodRoundManager : MonoBehaviour
         {
             yield return new WaitForSeconds(timeBetweenEggs);
             //instatiate egg in random position
-            Vector3 randomPos = new Vector3(Random.Range(-20, 20), 1, Random.Range(-20, 20));
+            Vector3 randomPos = new Vector3(Random.Range(-15, 15), 1, Random.Range(-15, 15));
             Instantiate(eggPrefab, randomPos, Quaternion.identity);
         }
         Debug.Log("Food Round Over");

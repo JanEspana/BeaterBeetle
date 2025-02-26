@@ -16,14 +16,17 @@ public class UpgradeMenu : MonoBehaviour
         {
             upgrade = UpgradeManager.instance.upgrades[Random.Range(0, UpgradeManager.instance.upgrades.Count)];
             UpgradeManager.instance.upgrades.Remove(upgrade);
-            gameObject.GetComponent<Image>().sprite = upgrade.icon;
+            gameObject.GetComponentsInChildren<Image>()[1].sprite = upgrade.icon;
+            gameObject.GetComponentsInChildren<TextMeshProUGUI>()[1].text = upgrade.description;
+            //gameObject.GetComponent<Image>().sprite = upgrade.icon;
             gameObject.GetComponentInChildren<TextMeshProUGUI>().text = upgrade.upgradeName;
         }
         else
         {
             //pone una upgrade generica por si no hay para elegir
             upgrade = leftoverUpgradeSO;
-            gameObject.GetComponentInChildren<Image>().sprite = upgrade.icon;
+            gameObject.GetComponentsInChildren<Image>()[1].sprite = upgrade.icon;
+            gameObject.GetComponentsInChildren<TextMeshProUGUI>()[1].text = upgrade.description;
             //gameObject.GetComponent<Image>().sprite = upgrade.icon;
             gameObject.GetComponentInChildren<TextMeshProUGUI>().text = upgrade.upgradeName;
         }

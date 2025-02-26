@@ -348,6 +348,7 @@ MonoBehaviour:
   range: 0.5
   walkClip: {fileID: 8300000, guid: 994c91be717ed8a428ee85eb06b0e9bb, type: 3}
   audioManager: {fileID: 0}
+  soundPlayed: 1
 --- !u!114 &1876610720112752561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,7 +531,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   blockable: 0
   originalPosition: {x: 0, y: -0.45, z: 0.75}
-  hitSFX: {fileID: 8300000, guid: fbc53799dfe89a44693e9d9ce9fdd503, type: 3}
+  hitSFX: {fileID: 8300000, guid: aefbd97552a2c1144a8ce944d249978d, type: 3}
 --- !u!54 &807664637533769335
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -683,7 +684,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   blockable: 1
   originalPosition: {x: 0, y: 0, z: 0.75}
-  hitSFX: {fileID: 8300000, guid: fbc53799dfe89a44693e9d9ce9fdd503, type: 3}
+  hitSFX: {fileID: 8300000, guid: aefbd97552a2c1144a8ce944d249978d, type: 3}
 --- !u!54 &3516017428093751981
 Rigidbody:
   m_ObjectHideFlags: 0

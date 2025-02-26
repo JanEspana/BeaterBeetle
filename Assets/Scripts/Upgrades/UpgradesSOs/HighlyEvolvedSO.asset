@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cddac9be1229754b99309bf22cd950f, type: 3}
   m_Name: HighlyEvolvedSO
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1319878198, guid: f9816ba27b5178d44818d114a81a7819, type: 3}
   upgradeName: Highly Evolved
+  description: +Stats from shop

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0acd1e6d9e27ef47a6c4797523c4f55, type: 3}
   m_Name: SpeedDemonSO
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1888798300, guid: f9816ba27b5178d44818d114a81a7819, type: 3}
   upgradeName: Speed Demon
+  description: ++Speed
   speedMultiplier: 1.5

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -95,7 +95,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mejoras_Final_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4268
+        width: 2134
+        height: 2134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb247def10da77047b6deddc20a2d7a2
+      internalID: -1079471996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mejoras_Final_1
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 4268
+        width: 2134
+        height: 2134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23bdcb2a56c03cb488e234989a9631ee
+      internalID: -1828362490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mejoras_Final_2
+      rect:
+        serializedVersion: 2
+        x: 4268
+        y: 4268
+        width: 2134
+        height: 2134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e564b9a974aa946a01ba3ede9f0a3e
+      internalID: -602196260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mejoras_Final_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2134
+        width: 2134
+        height: 2134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f96396e7c1b49b42879e0af8ae770b0
+      internalID: -78993278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mejoras_Final_4
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 2134
+        width: 2134
+        height: 2134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af12f1e573e75804a8cec10739407c60
+      internalID: 1888798300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mejoras_Final_5
+      rect:
+        serializedVersion: 2
+        x: 4268
+        y: 2134
+        width: 2134
+        height: 2134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a139f20460ffad4a929f5dce0ea0101
+      internalID: 1319878198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mejoras_Final_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2134
+        height: 2134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc214b3f079ab644bc44682ae9b1cb8
+      internalID: 1855818930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mejoras_Final_7
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 0
+        width: 2134
+        height: 2134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a5866c9e1eeb949b01927017dab679
+      internalID: 2111396317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mejoras_Final_8
+      rect:
+        serializedVersion: 2
+        x: 4268
+        y: 0
+        width: 2134
+        height: 2134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2386f7f8989a6464c93adb8e3640ae4b
+      internalID: -781322724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +295,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mejoras_Final_0: -1079471996
+      Mejoras_Final_1: -1828362490
+      Mejoras_Final_2: -602196260
+      Mejoras_Final_3: -78993278
+      Mejoras_Final_4: 1888798300
+      Mejoras_Final_5: 1319878198
+      Mejoras_Final_6: 1855818930
+      Mejoras_Final_7: 2111396317
+      Mejoras_Final_8: -781322724
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

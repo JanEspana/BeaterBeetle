@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0c88eb2137f4f4c802d2d7fd7ce1ab, type: 3}
   m_Name: ScavengerSO
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -602196260, guid: f9816ba27b5178d44818d114a81a7819, type: 3}
   upgradeName: Scavenger
+  description: +Kcal
   extraCaloriesPercent: 0.2
