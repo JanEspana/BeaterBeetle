@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 public class MainMenuManager : MonoBehaviour
 {
     private GameObject settingCanvas;
+    public GameObject mainCanvas;
     private UnityEngine.UI.Slider volumeSlider;
     private TMP_InputField usernameInput;
     private TMP_InputField passwordInput;
@@ -49,7 +50,6 @@ public class MainMenuManager : MonoBehaviour
             }
         }
 
-        // **Nuevo: Vincular botón de login**
         loginButtonObj = GameObject.Find("loginButton");
         if (loginButtonObj != null)
         {
@@ -80,6 +80,8 @@ public class MainMenuManager : MonoBehaviour
     public void toggleSettings()
     {
         if (settingCanvas != null) settingCanvas.SetActive(!settingCanvas.activeSelf);
+        mainCanvas.SetActive(!mainCanvas.activeSelf);
+
     }
 
     public void startGame()
