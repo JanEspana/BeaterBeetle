@@ -21,14 +21,14 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isLeftHanded)
+        /*if (isLeftHanded)
         {
             transform.localPosition = new Vector3(-camX, transform.localPosition.y, transform.localPosition.z);
         }
         else
         {
             transform.localPosition = new Vector3(camX, transform.localPosition.y, transform.localPosition.z);
-        }
+        }*/
         CamMoving();
     }
     void CamMoving()
